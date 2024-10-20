@@ -69,7 +69,36 @@ git clone https://github.com/RishiLagad/Spatial-Transcriptomics-Seurat.git
 
 
 ## How to Use
-Describe how someone can use these scripts to perform their own analysis.
+Title: Spatial Transcriptomics Analysis Using Seurat
+
+Description: This R script is designed for comprehensive analysis of spatial transcriptomics data using the Seurat package. The script handles all steps of the analysis pipeline, from data loading to visualization of results.
+
+Key Components of the Script:
+
+Data Loading: The script begins by loading the expression matrix and corresponding metadata from specified file paths. It ensures the data is properly ingested into R for further processing.
+
+Seurat Object Creation: Converts the loaded data into a Seurat object, enabling advanced single-cell analysis techniques. This includes integrating metadata that may contain critical information for subsequent analysis steps.
+
+Quality Control and Filtering: Implements initial quality control by filtering out cells based on the number of detected genes. It then calculates the percentage of mitochondrial DNA as a proxy for cell health, removing cells with unusually high mitochondrial content to ensure data quality.
+
+Data Normalization and Feature Selection: The script normalizes the data using a log normalization method. It identifies highly variable features, which are crucial for distinguishing different cell types or states.
+
+Dimensionality Reduction: Performs principal component analysis (PCA) followed by Uniform Manifold Approximation and Projection (UMAP) to reduce the dimensionality of the data. This step is critical for visualizing complex data structures in a lower-dimensional space.
+
+Clustering: Finds neighbors based on the reduced dimensions and identifies clusters using a resolution parameter that can be adjusted depending on the dataset's complexity.
+
+Data Visualization: Generates various plots to visualize the analysis results, including violin plots for mitochondrial content, PCA elbow plots to determine the number of principal components, UMAP plots to visualize the clusters, and heatmaps to show the top 10 markers per cluster.
+
+Data Saving: Finally, the script saves the processed Seurat object for future use, ensuring that all transformations and results can be revisited and further analyzed.
+
+Purpose of the Script: The purpose of this script is to provide a streamlined workflow for analyzing spatial transcriptomics data, enabling researchers to quickly and effectively identify and visualize patterns of gene expression across different cell types or tissue regions.
+
+Usage Instructions:
+
+Update the file paths to point to your local data files.
+Run the script in an R environment such as RStudio.
+Adjust parameters such as the resolution for clustering based on the specific characteristics of your data.
+Conclusion: This script is a key tool for researchers working with spatial transcriptomics data, providing a detailed yet adaptable approach to understanding the spatial distribution of gene expression. It leverages the powerful features of the Seurat package, ensuring robust analysis and insightful visualizations.
 
 ## Contact
 For any questions or issues, please open an issue on this repository or contact me directly.
